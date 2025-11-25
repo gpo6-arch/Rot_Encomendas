@@ -56,17 +56,14 @@ export default function OrderListScreen({ navigation }) {
       {/* Componente de Cabeçalho AJUSTADO */}
       <View style={styles.header}>
         {/* 🚨 BOTÃO DE NAVEGAÇÃO RÁPIDA PARA CLIENTES (TESTE) */}
-        <TouchableOpacity 
-          onPress={() => navigation.navigate('ClientList')} // Vai para a lista de Clientes
-          style={{ padding: 5, paddingLeft: 0 }}
-        >
-          <Text style={{ color: 'white', fontWeight: 'bold' }}>&lt; CLIENTES</Text>
+        <TouchableOpacity onPress={() => navigation.goBack('Home')}>
+          <MaterialIcons name="arrow-back-ios" size={24} color="white" />
         </TouchableOpacity>
         
         <Text style={styles.headerTitle}>Pedidos</Text>
         
         {/* Espaço em branco para alinhamento (ou outro botão) */}
-        <View style={{ width: 80 }} /> 
+        <View style={{ width: 24 }} />
       </View>
 
       {/* Botão de Criação */}

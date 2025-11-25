@@ -1,4 +1,3 @@
-// src/pages/ListarClientes/index.js
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'; 
@@ -34,19 +33,12 @@ export default function ClientListScreen({ navigation }) {
       {/* Componente de Cabeçalho AJUSTADO */}
       <View style={styles.header}>
         {/* Botão para voltar (pode ser o menu Home, se existir) */}
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack('Home')}>
           <MaterialIcons name="arrow-back-ios" size={24} color="white" />
         </TouchableOpacity>
         
         <Text style={styles.headerTitle}>Clientes</Text>
-        
-        {/* 🚨 BOTÃO DE NAVEGAÇÃO RÁPIDA PARA PEDIDOS (TESTE) */}
-        <TouchableOpacity 
-          onPress={() => navigation.navigate('OrderList')} // Vai para a lista de Pedidos
-          style={{ padding: 5, paddingRight: 0 }} // Ajuste de padding para a borda
-        >
-          <Text style={{ color: 'white', fontWeight: 'bold' }}>PEDIDOS &gt;</Text>
-        </TouchableOpacity>
+        <View style={{ width: 24 }} />
       </View>
 
       {/* Botão de Criação */}
@@ -92,7 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#90EE90', 
+    backgroundColor: '#C3DA2C', 
     padding: 15,
     borderRadius: 10,
     margin: 15,
