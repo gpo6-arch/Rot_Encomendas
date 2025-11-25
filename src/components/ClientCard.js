@@ -1,4 +1,3 @@
-// src/components/ClientCard.js
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -57,7 +56,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   editButton: {
-    backgroundColor: '#ffaa00', // Cor amarela/laranja da imagem
+    backgroundColor: '#ffaa00', 
     paddingVertical: 8,
     paddingHorizontal: 15,
     borderRadius: 5,

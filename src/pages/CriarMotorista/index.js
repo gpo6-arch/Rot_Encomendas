@@ -244,8 +244,6 @@ const styles = StyleSheet.create({
         minHeight: 50, 
         marginBottom: 15, 
     },
-    
-    // ESTILOS PARA O SELECT (MODAL CUSTOMIZADO)
     selectWrapper: {
         marginBottom: 15,
     },

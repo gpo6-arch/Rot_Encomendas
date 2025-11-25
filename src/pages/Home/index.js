@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
     };
     
     const navigateToRoutes = () => {
-        alert('Funcionalidade de Rotas em desenvolvimento!'); 
+        alert('Mapa'); 
     };
 
 
@@ -66,7 +66,7 @@ export default function HomeScreen({ navigation }) {
                 </TouchableOpacity>
                 
                 {/* BOTÃO ROTAS (Placeholder) */}
-                <TouchableOpacity style={styles.btn} onPress={navigateToRoutes}>
+                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('AtribuirPedidos')}>
                     <Feather name="map" size={28} color="white" />
                     <Text style={styles.btnText}> Ver Rotas </Text>
                 </TouchableOpacity>

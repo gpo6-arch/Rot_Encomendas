@@ -1,4 +1,3 @@
-// src/components/CustomInput.js
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { Controller } from 'react-hook-form';
@@ -16,7 +15,6 @@ const CustomInput = ({ control, name, label, placeholder, rules = {}, keyboardTy
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
-            // Use o 'label' como placeholder se nenhum placeholder for fornecido
             placeholder={placeholder || label} 
             placeholderTextColor="#888"
             keyboardType={keyboardType}

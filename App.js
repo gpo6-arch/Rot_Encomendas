@@ -10,7 +10,9 @@ import ClientFormScreen from './src/pages/CriarCliente/index';  
 import OrderListScreen from './src/pages/ListarPedidos/index';    
 import OrderFormScreen from './src/pages/CriarPedido/index';    
 import DriverListScreen from './src/pages/ListarMotoristas/index'; 
-import DriverFormScreen from './src/pages/CriarMotorista/index';   
+import DriverFormScreen from './src/pages/CriarMotorista/index';
+import Mapa from "./src/pages/Mapa/index";
+import AtribuirPedidosScreen from './src/pages/AtribuirPedidos/index';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,24 +24,21 @@ function App() {
         screenOptions={{ headerShown: false }} 
         initialRouteName="Home" 
       >
-        {/* Rota HOME (Ponto de partida) */}
+
         <Stack.Screen name="Home" component={HomeScreen} />
-        
-        {/* Rota Clientes */}
+
         <Stack.Screen name="ClientList" component={ClientListScreen} />
         <Stack.Screen name="ClientForm" component={ClientFormScreen} />
 
-        {/* Rota Pedidos */}
         <Stack.Screen name="OrderList" component={OrderListScreen} />
         <Stack.Screen name="OrderForm" component={OrderFormScreen} />
-        
-        {/* Rota Motoristas */}
+
         <Stack.Screen name="DriverList" component={DriverListScreen} /> 
         <Stack.Screen name="DriverForm" component={DriverFormScreen} />
-        
-        {/* Rota Rotas (Falta criar) */}
-        {/* <Stack.Screen name="RouteScreen" component={RouteScreen} /> */}
 
+        <Stack.Screen name="AtribuirPedidos" component={AtribuirPedidosScreen} />
+        <Stack.Screen name="Mapa" component={Mapa} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

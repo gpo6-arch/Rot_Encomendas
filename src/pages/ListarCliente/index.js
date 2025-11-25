@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#60B0E0', 
-    paddingTop: 40, // Mantém o espaçamento para a barra de status
+    paddingTop: 40, 
     paddingHorizontal: 15,
     paddingBottom: 15,
   },

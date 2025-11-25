@@ -35,12 +35,10 @@ export default function OrderListScreen({ navigation }) {
   const [orders, setOrders] = useState(mockOrders); 
 
   const handleEdit = (orderId) => {
-    // Navega para a tela de formulário, passando o ID do pedido
     navigation.navigate('OrderForm', { orderId: orderId });
   };
   
   const handleCreate = () => {
-    // Navega para a tela de formulário sem passar ID (criação)
     navigation.navigate('OrderForm', { orderId: null });
   };
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; // 🚨 Adicionado useState para simular o loading
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native'; // 🚨 Adicionado ActivityIndicator
+import React, { useState } from 'react'; 
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native'; 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { orderSchema } from '../../validation/orderSchema'; 
@@ -11,13 +11,11 @@ export default function OrderFormScreen({ navigation, route }) {
   const { orderId } = route.params || {};
   const isEditing = !!orderId;
 
-  // 🚨 Estado local para simular o submetimento e substituir o 'isSubmitting' do useForm
   const [isSaving, setIsSaving] = useState(false); 
 
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(orderSchema),
     defaultValues: { 
-      // Se estiver editando, adicione valores fictícios aqui para testar:
       nomeCliente: isEditing ? 'Isabella M. Barbosa' : '',
       descricaoProduto: isEditing ? 'Airfryer' : '',
       telefone: '',
@@ -32,15 +30,11 @@ export default function OrderFormScreen({ navigation, route }) {
 
   const onSubmit = async (data) => {
     setIsSaving(true);
-    
-    // 🚫 REMOVIDA A CHAMADA À API (`submitToAPI`)
-    
-    // Simulação do tempo de processamento
+
     await new Promise(resolve => setTimeout(resolve, 1500)); 
     
     setIsSaving(false);
 
-    // Mensagem de sucesso após a simulação
     const action = isEditing ? 'atualizado' : 'criado';
     Alert.alert('Simulação de Sucesso', `Pedido ${action} com os seguintes dados:\n${JSON.stringify(data, null, 2)}`);
     
@@ -83,7 +77,7 @@ export default function OrderFormScreen({ navigation, route }) {
         <TouchableOpacity 
           style={styles.saveButton} 
           onPress={handleSubmit(onSubmit)} 
-          disabled={isSaving} // Usa o estado local de salvamento
+          disabled={isSaving} 
         >
           {isSaving ? (
             <ActivityIndicator color="white" size="small" />
@@ -100,7 +94,6 @@ export default function OrderFormScreen({ navigation, route }) {
   );
 }
 
-// ... Estilos (Styles) permanecem os mesmos ...
 const styles = StyleSheet.create({
   scrollContainer: {
     paddingBottom: 40,

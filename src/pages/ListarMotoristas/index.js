@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
     },
-    // Estilos do Botão de Criação
     createButton: {
         flexDirection: 'row',
         alignItems: 'center',

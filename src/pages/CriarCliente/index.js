@@ -1,27 +1,22 @@
-// src/pages/CriarCliente/index.js
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { MaterialIcons } from '@expo/vector-icons'; 
 
-// Importe os arquivos que criamos anteriormente
 import { clientSchema } from '../../validation/clientSchema'; 
 import CustomInput from '../../components/CustomInput'; 
 
 export default function ClientFormScreen({ navigation, route }) {
-  // Pega o clientId se estiver editando (vindo da tela de lista)
   const { clientId } = route.params || {};
-  const isEditing = !!clientId; // Determina se é edição ou criação
+  const isEditing = !!clientId; 
   
-  // ⚠️ Estado para simular o envio de formulário (loading)
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(clientSchema),
-    // Valores iniciais do formulário
+
     defaultValues: { 
-      // Em um cenário real de edição, você carregaria o cliente da API aqui
       nome: isEditing ? 'Nome Existente' : '',
       cpf: isEditing ? '12345678900' : '',
       telefone: '',
@@ -35,19 +30,14 @@ export default function ClientFormScreen({ navigation, route }) {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    
-    // 🚫 REMOVIDA A LÓGICA DE INTEGRAÇÃO COM A API, conforme solicitado.
 
-    // Simulação do tempo de processamento
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     setIsSubmitting(false);
 
-    // Mensagem de sucesso após a simulação
     const action = isEditing ? 'atualizado' : 'criado';
     Alert.alert('Simulação de Sucesso', `Cliente ${action} com os seguintes dados:\n${JSON.stringify(data, null, 2)}`);
     
-    // Volta para a tela de lista
     navigation.goBack(); 
   };
 
@@ -86,7 +76,7 @@ export default function ClientFormScreen({ navigation, route }) {
         <TouchableOpacity 
           style={styles.saveButton} 
           onPress={handleSubmit(onSubmit)} 
-          disabled={isSubmitting} // Desabilita durante o envio
+          disabled={isSubmitting} 
         >
           {isSubmitting ? (
             <ActivityIndicator color="white" size="small" />

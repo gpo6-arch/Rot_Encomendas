@@ -1,7 +1,6 @@
 import * as yup from 'yup';
 
 export const orderSchema = yup.object().shape({
-  // Detalhes do Cliente/Receptor
   nomeCliente: yup.string().required('O nome do cliente é obrigatório'),
   telefone: yup.string().required('O telefone é obrigatório'),
 
