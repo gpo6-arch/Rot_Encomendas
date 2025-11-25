@@ -11,19 +11,19 @@ import styles from './styles';
 
 export default function HomeScreen({ navigation }) {
     const navigateToClients = () => {
-        navigation.navigate('ClientList'); 
+        navigation.navigate('ListarCliente'); 
     };
     
     const navigateToOrders = () => {
-        navigation.navigate('OrderList'); 
+        navigation.navigate('ListarPedidos'); 
     };
     
     const navigateToDrivers = () => {
-        navigation.navigate('DriverList'); 
+        navigation.navigate('ListarMotorista'); 
     };
     
     const navigateToRoutes = () => {
-        alert('Funcionalidade de Rotas em desenvolvimento!'); 
+        navigation.navigate('Mapa');  
     };
 
 
