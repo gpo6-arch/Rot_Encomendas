@@ -209,3 +209,4 @@ const styles = StyleSheet.create({
     },
     btnText: { color: "#fff", textAlign: "center", fontWeight: "700", fontSize: 18 },
 });
+

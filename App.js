@@ -1,4 +1,3 @@
-// App.js
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -9,7 +8,7 @@ import ClientListScreen from './src/pages/ListarCliente/index';
 import ClientFormScreen from './src/pages/CriarCliente/index';   
 import OrderListScreen from './src/pages/ListarPedidos/index';    
 import OrderFormScreen from './src/pages/CriarPedido/index';    
-import DriverListScreen from './src/pages/ListarMotoristas/index'; 
+import DriverListScreen from './src/pages/ListarMotorista/index'; 
 import DriverFormScreen from './src/pages/CriarMotorista/index';
 import Mapa from "./src/pages/Mapa/index";
 import AtribuirPedidosScreen from './src/pages/AtribuirPedidos/index';
